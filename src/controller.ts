@@ -1,7 +1,11 @@
 const server = require('./main')
+const import_service = require('./service')
+const service = new import_service()
 
-server.get('/',(req:any,res:any)=>{
-    res.send('Hello')
+server.get('/',async (req:any,res:any)=>{
+    const result = await service.main_page_info(req.headers)
+    console.log(result)
+    res.send(result)
     res.end()
 })
 
