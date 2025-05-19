@@ -8,3 +8,7 @@ server.get('/',async (req:any,res:any)=>{
     res.send(result)
     res.end()
 })
+
+server.get('/52',(req:any,res:any)=>{
+    res.end('52')
+})
